@@ -1,6 +1,6 @@
 package BikeDemo;
 
-public class BikeDemo {
+public class BikeMain {
     public static void main(String[] args) {
         Bike mountainBike1 = new Bike();
         Bike mountainBike2 = new Bike();

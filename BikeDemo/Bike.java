@@ -1,5 +1,4 @@
 package BikeDemo;
-
 public class Bike {
     private String brand;
     private int speed;
