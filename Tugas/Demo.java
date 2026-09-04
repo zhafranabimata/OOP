@@ -10,16 +10,13 @@ public class Demo {
         tas.tutupTas();
         tas.cetakInformasi();
 
-        TasRansel ransel = new TasRansel(
-                "Eiger",
-                "Hitam",
-                4,
-                true
-        );
-        System.out.println("\n=== TAS RANSEL ===");
+       TasRansel ransel = new TasRansel("Eiger", "Hijau", 10);
+
+        System.out.println("\n=== TAS Ransel ===");
         ransel.bukaTas();
-        ransel.aturTali();
-        ransel.masukkanBuku();
+        ransel.tambahBarang(3.5);
+        ransel.tambahBarang(2.5);
+        ransel.keluarkanBarang(1);
         ransel.cetakInformasi();
         ransel.tutupTas();
 
