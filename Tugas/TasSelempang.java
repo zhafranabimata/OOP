@@ -37,3 +37,4 @@ public class TasSelempang extends Tas {
         System.out.println("Bahan        : " + bahan);
     }
 }
+
