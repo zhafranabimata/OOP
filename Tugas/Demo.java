@@ -4,7 +4,6 @@ public class Demo {
     public static void main(String[] args) {
 
         Tas tas = new Tas("Eiger", "Hitam");
-
         System.out.println("=== TAS ===");
         tas.bukaTas();
         tas.tutupTas();

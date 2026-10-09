@@ -1,11 +1,11 @@
 package id.ac.polinema;
 
-public class account {
+public class Account {
 
     public String ownerName;
     public double balance;
 
-    public account(String ownerName, double balance) {
+    public Account(String ownerName, double balance) {
         this.ownerName = ownerName;
         this.balance = balance;
     }
@@ -39,7 +39,7 @@ public class account {
         return balance < 0;
     }
 
-    public void transferTo(account target, double amount) {
+    public void transferTo(Account target, double amount) {
         double previousBalance = balance;
 
         withdraw(amount);
