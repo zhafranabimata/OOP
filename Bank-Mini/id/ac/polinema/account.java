@@ -1,51 +1,45 @@
 package id.ac.polinema;
 
 public class Account {
+    private String accountNumber;
+    private Customer owner;
+    private double balance;
 
-    public String ownerName;
-    public double balance;
-
-    public Account(String ownerName, double balance) {
-        this.ownerName = ownerName;
+    public Account(String accountNumber, Customer owner, double balance) {
+        this.accountNumber = accountNumber;
+        this.owner = owner;
         this.balance = balance;
     }
 
-    public void deposit(double amount) {
-        balance = balance + amount;
+    public String getAccountNumber() {
+        return accountNumber;
     }
 
-    public void withdraw(double amount) {
-        balance = balance - amount;
+    public Customer getOwner() {
+        return owner;
+    }
 
-        if (isOverdrawn()) {
-            balance = balance + amount;
-            System.out.println(
-                "Withdrawal rejected: insufficient balance."
-            );
+    public double getBalance() {
+        return balance;
+    }
+
+    public boolean deposit(double amount) {
+        if (amount <= 0) {
+            return false;
         }
+        balance += amount;
+        return true;
+    }
+
+    public boolean withdraw(double amount) {
+        if (amount <= 0 || amount > balance) {
+            return false;
+        }
+        balance -= amount;
+        return true;
     }
 
     public void printInfo() {
-        System.out.println(
-            ownerName + " - balance: " + balance
-        );
-    }
-
-    public String formatBalance() {
-        return String.format("%,.2f", balance);
-    }
-
-    public boolean isOverdrawn() {
-        return balance < 0;
-    }
-
-    public void transferTo(Account target, double amount) {
-        double previousBalance = balance;
-
-        withdraw(amount);
-
-        if (balance != previousBalance) {
-            target.deposit(amount);
-        }
+        System.out.println(accountNumber + " - " + owner.getName() + " - balance: " + balance);
     }
 }

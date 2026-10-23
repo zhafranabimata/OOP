@@ -2,22 +2,22 @@ package id.ac.polinema;
 
 public class Main {
     public static void main(String[] args) {
-        Account acc = new Account("Badu", 0);
-        Account from = new Account("Nadia", 500000);
-        Account to = new Account("Budi", 200000);
+        Customer nadia = new Customer("Nadia","129381283128");
+        Customer sari = new Customer("Sari","0192819238");
 
-        acc.deposit(20000);
-        from.transferTo(to, 100000);
+        Account a1 = new Account("A001", nadia, 350000);
+        Account a2 = new Account("A002", sari, 200000);
+        Account a3 = new Account("A003", nadia, 150000);
 
-        from.printInfo();
-        to.printInfo();
-        acc.printInfo();
+        Bank bank = new Bank(3);
+        bank.addAccount(a1);
+        bank.addAccount(a2);
+        bank.addAccount(a3);
 
-        Account[] accs = new Account[10];
-
-        accs[2] = new Account("Bido", 0);
-        
-        accs[2].printInfo();
-
+        Account[] hasil = bank.findAccountsByOwnerName("Nadia");
+        System.out.println("Jumlah rekening: " + hasil.length);
+        for (Account account : hasil) {
+            account.printInfo();
+        }
     }
 }
