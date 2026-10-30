@@ -28,5 +28,8 @@ public class Main {
         System.out.println("Before Interest: " + savings.getBalance());
         savings.applyInterest();
         System.out.println("After Interest: " + savings.getBalance());
+
+        System.out.println(acc2.auditLog());
     }
 }
+

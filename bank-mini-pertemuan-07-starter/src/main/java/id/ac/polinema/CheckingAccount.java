@@ -1,6 +1,6 @@
 package id.ac.polinema;
 
-public class CheckingAccount extends Account {
+public class CheckingAccount extends Account implements Auditable {
     private double overdraftLimit;
     private static final double MONTHLY_FEE = 15000;
     public CheckingAccount(String accountNumber, Customer owner, double balance, double overdraftLimit) {
@@ -26,4 +26,8 @@ public class CheckingAccount extends Account {
         super.printInfo();
         System.out.println("Account type: Savings, interest rate: " + overdraftLimit);
     }
+    @Override
+    public String auditLog() {
+    return "Audit - " + getAccountNumber() + " - balance: " + getBalance();
+}
 }
