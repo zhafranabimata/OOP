@@ -30,6 +30,7 @@ public class Main {
         System.out.println("After Interest: " + savings.getBalance());
 
         System.out.println(acc2.auditLog());
+        System.out.println(checking.auditLog());
     }
 }
 
